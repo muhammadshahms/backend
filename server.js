@@ -68,7 +68,9 @@ app.get('/attendance-logs', async (req, res) => {
         res.status(500).json({ message: 'DB Error', error: err });
     }
 });
-
+app.get('/', (req, res) => {
+    res.send('Hello World');
+});
 // Fetch logs
 app.get('/logs', async (req, res) => {
     const logs = await PrintLog.find().sort({ Timestamp: -1 });
